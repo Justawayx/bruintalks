@@ -67,6 +67,38 @@ html {
     padding: 10px 10px;
 }
 
+table, th, td {
+    border-collapse: separate;
+    border-spacing: 2px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th, td {
+    padding: 5px 8px;
+}
+
+th {
+    background-color: #3a5f92;
+    color: white;
+    text-align: center;
+}
+
+td {
+    background-color: aliceblue;
+    color: #1a3963;
+    text-align: left;
+}
+
+#more-info {
+    text-align: center;
+}
+
+.blank-row {
+    height: 10px !important;
+    background-color: white;
+}
+
 /* On smaller screens */
 @media screen and (max-height: 450px) {
     .sidenav {
