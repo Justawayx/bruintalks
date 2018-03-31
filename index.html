@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 
 	<head>
@@ -8,91 +8,79 @@
 		<meta name="description" content="">
 		<meta name="author" content="ChemPeople">
 		
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		
 		<!-- Custom CSS -->
 		<link href="./css/style.css" type="text/css" rel="stylesheet">
 		
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
+
 		<title>Bruintalks</title>
 		
 	</head>
 	
 	<body>
 	
-		<header>
-		
-			<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #0072FF">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">bruintalks</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-				</div>
-				<div class="collapse navbar-collapse" id="navbar">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#">Sources</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">About</a>
-						</li>
-					</ul>
-				</div>				
-			</nav>
-			
-		</header>
-		
-		
-		<div class="container-fluid">
-			<div class="row flex-xl-nowrap">
-				<div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-					<form class="bd-search d-flex align-items-center">
-						<input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-						<button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
-							<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false">
-							<title>Menu</title>
-							<path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>
-						</button>
-					</form>
+        <!-- Side navigation -->
+        <div class="sidenav">
+            <a href="#" id="title">bruintalks</a>
+            <a href="#">Subject</a>
+            <a href="#">Time</a>
+            <a href="#">Past Seminars</a>
+        </div>
 
-					<nav class="collapse bd-links" id="bd-docs-nav">
-						<div class="bd-toc-item active">
-							<ul class="nav bd-sidenav">
-								<li class="active bd-sidenav-active">
-									<a href="#">Upcoming Events</a>
-								</li>
-								<li>
-									<a href="#">Past Events</a>
-								</li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-				
-				<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-					<h1>James from Moon Hooch makes great butternut squash curry</h1>
-					<h2>Or so I assume</h2>
-					<br>
-					<p>This is a test</p>
-				</main>
-				
-			</div>
-		</div>
+        <!-- Footer -->
+        <div class="side-footer">
+            <a href="#">Sources</a>
+            <a href="#">About</a>
+            <p id="update">last updated</p>
+        </div>
 		
-		<footer class="footer">
+        <!-- Page Content -->
+        <div class="main">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td id="event-name">New Approaches for Cold Chemistry</td>
+                </tr>
+                <tr>
+                    <th>Speaker</th>
+                    <td>Wesley C. Campbell (UCLA)</td>
+                </tr>
+                <tr>
+                    <th>When</th>
+                    <td>Monday, April 2; 4:00 PM</td>
+                </tr>
+                <tr>
+                    <th>Where</th>
+                    <td>New Approaches for Cold Chemistry</td>
+                </tr>
+                <tr>
+                    <td id="more-info" colspan="2"><a href="#">More Info</a></td>
+                </tr>
+                <tr class="blank-row"></tr>
+                <tr>
+                    <th>Name</th>
+                    <td id="event-name">Harnessing Molecular Photon Upconversion Using Self Assembled Multilayers on Metal Oxide Surfaces</td>
+                </tr>
+                <tr>
+                    <th>Speaker</th>
+                    <td>Wesley C. Campbell (UCLA)</td>
+                </tr>
+                <tr>
+                    <th>When</th>
+                    <td>Monday, April 2; 4:00 PM</td>
+                </tr>
+                <tr>
+                    <th>Where</th>
+                    <td>New Approaches for Cold Chemistry</td>
+                </tr>
+                <tr>
+                    <td id="more-info" colspan="2"><a href="#">More Info</a></td>
+                </tr>
+            </table>
+        </div>
 		
-			<div class="container">
-				<span id="update">Last Updated: March 29, 2018</span>
-			</div>
-			
-		</footer>
-		
-		<!-- jQuery, Popper.js, and Bootstrap JavaScript plugins -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 	</body>
 	
 </html>
