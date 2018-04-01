@@ -43,7 +43,7 @@ list_titles = []
 
 for chunk in all_titles:
 	for x in chunk.findAll('a'):
-		list_titles.append(x.string)
+		list_titles.append((x.string).replace("'", "\\'"))
 
 
 # process speakers
@@ -51,7 +51,7 @@ list_speakers = []
 
 for chunk in all_speakers:
 	for x in chunk.findAll('div', class_='field-content'):
-		list_speakers.append(x.string)
+		list_speakers.append((x.string).replace("'", "\\'"))
 		
 		
 # process dates and times
@@ -89,9 +89,7 @@ info_df = pd.DataFrame(
 	
 # preserve column order
 info_df = info_df[['link', 'title', 'speaker', 'location', 'date', 'start-time', 'end-time', 'subject', 'type']]
-	
-	
-# 
+		
 # print(list_links)
 # print(list_titles)
 # print(list_speakers)
@@ -99,9 +97,30 @@ info_df = info_df[['link', 'title', 'speaker', 'location', 'date', 'start-time',
 # 
 # print(list_dates)
 # print(list_start_times)
-# 
+# print(info_df)
 
-print(info_df)
+# Copy event data into MySQL database
 
-		
+import MySQLdb
+db = MySQLdb.connect(host="localhost", user="bruintalks2018", passwd="fireemblembobasoup1%", db="bruintalks")
 
+db.set_character_set('utf8')
+
+cur = db.cursor()
+
+# cur.execute('SET NAMES utf8;')
+# cur.execute('SET CHARACTER SET utf8;')
+# cur.execute('SET character_set_connection=utf8;')
+
+# Database keys: link, title, speaker, location, 
+# date, start_time, end_time, subject, type, event_id
+
+for i in range(len(list_links)):
+	cur.execute("INSERT INTO event (link, title, speaker, location, date, start_time, subject, type) VALUES (\'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\',\'{5}\',\'MCDB\',\'seminar\');".format(list_links[i], list_titles[i], list_speakers[i], list_locations[i], list_dates[i], list_start_times[i]))	
+	db.commit()
+
+# Commit changes
+# db.commit()
+
+# Close connection
+db.close()
