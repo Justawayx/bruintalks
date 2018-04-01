@@ -13,8 +13,8 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 
-my_site = "https://www.ee.ucla.edu/events"
-my_site_base = "https://www.ee.ucla.edu"
+my_site = "https://www.cee.ucla.edu/upcoming-events/"
+my_site_base = "https://www.cee.ucla.edu"
 
 
 # query website and return html to a variable
@@ -128,7 +128,7 @@ info_df = pd.DataFrame(
 	'date': list_dates,
 	'start-time': list_start_times,
 	'end-time': list_end_times,
-	'subject': 'EE',
+	'subject': 'Civil and Enviro Eng',
 	'type': 'seminar'})
 	
 # preserve column order
